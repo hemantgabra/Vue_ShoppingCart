@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <!-- <h1>{{ msg }}</h1> -->
     <button @click="showTesting()">Click</button>
   </div>
 </template>
@@ -9,11 +9,15 @@
 export default {
   name: "HelloWorld",
   props: {
-    method: { type: Function }
+    demo: Boolean
   },
   methods: {
     showTesting() {
-      this.$emit("showTesting");
+      let tDemo = this.demo;
+      tDemo;
+      this.$emit("showTesting", (tDemo = true));
+      alert("hi");
+      console.log(tDemo);
     }
   }
 };

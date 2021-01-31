@@ -2,8 +2,9 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
-    <Testing v-if="demo" @showTesting="showTesting($event)"></Testing>
+    <Testing v-if="demo" @showTesting="this.demo = true"></Testing>
     <!-- <button @click="showTesting">Click</button> -->
+    {{ name }}
   </div>
 </template>
 
@@ -19,14 +20,16 @@ export default {
   },
   data() {
     return {
-      demo: false
+      demo: false,
+      name: "hemant"
     };
-  },
-  methods: {
-    showTesting() {
-      this.demo = true;
-    }
   }
+  // methods: {
+  //   showTesting() {
+  //     this.demo = true;
+  //     //console.log("done");
+  //   }
+  // }
 };
 </script>
 
